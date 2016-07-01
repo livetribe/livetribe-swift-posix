@@ -14,44 +14,43 @@
 // limitations under the License.
 //
 
-protocol Posix: Fcntl {
-}
 
+public class PosixDelegate: Posix {
+    var delegate: Posix
 
-public class PosixRoot: Posix {
-    public static var root = PosixRoot()
-
-    public var fcntl: Fcntl = DefaultFcntl()
+    init(delegate: Posix) {
+        self.delegate = delegate
+    }
 
     public func creat(path: UnsafePointer<Int8>, _ mode: mode_t) -> Int32 {
-        return fcntl.creat(path, mode)
+        return self.delegate.creat(path, mode)
     }
 
     public func fcntl(fd: CInt, _ cmd: CInt, _ value: CInt) -> CInt {
-        return fcntl.fcntl(fd, cmd, value)
+        return self.delegate.fcntl(fd, cmd, value)
     }
 
     public func fcntl(fd: CInt, _ cmd: CInt) -> CInt {
-        return fcntl.fcntl(fd, cmd)
+        return self.delegate.fcntl(fd, cmd)
     }
 
     public func fcntl(fd: CInt, _ cmd: CInt, _ ptr: UnsafeMutablePointer<Void>) -> CInt {
-        return fcntl.fcntl(fd, cmd, ptr)
+        return self.delegate.fcntl(fd, cmd, ptr)
     }
 
     public func open(path: UnsafePointer<CChar>, oflag: CInt) -> CInt {
-        return fcntl.open(path, oflag: oflag)
+        return self.delegate.open(path, oflag: oflag)
     }
 
     public func open(path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt {
-        return fcntl.open(path, oflag, mode)
+        return self.delegate.open(path, oflag, mode)
     }
 
     public func openat(fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt) -> CInt {
-        return fcntl.openat(fd, path, oflag)
+        return self.delegate.openat(fd, path, oflag)
     }
 
     public func openat(fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt {
-        return fcntl.openat(fd, path, oflag, mode)
+        return self.delegate.openat(fd, path, oflag, mode)
     }
 }

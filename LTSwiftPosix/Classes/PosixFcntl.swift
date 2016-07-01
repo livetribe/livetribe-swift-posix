@@ -33,35 +33,35 @@ public protocol Fcntl {
 }
 
 public func creat(path: UnsafePointer<Int8>, _ mode: mode_t) -> Int32 {
-    return Posix.sharedInstance.creat(path, mode)
+    return PosixRoot.root.creat(path, mode)
 }
 
 public func fcntl(fd: CInt, _ cmd: CInt, _ value: CInt) -> CInt {
-    return Posix.sharedInstance.fcntl(fd, cmd, value)
+    return PosixRoot.root.fcntl(fd, cmd, value)
 }
 
 public func fcntl(fd: CInt, _ cmd: CInt) -> CInt {
-    return Posix.sharedInstance.fcntl(fd, cmd)
+    return PosixRoot.root.fcntl(fd, cmd)
 }
 
 public func fcntl(fd: CInt, _ cmd: CInt, _ ptr: UnsafeMutablePointer<Void>) -> CInt {
-    return Posix.sharedInstance.fcntl(fd, cmd, ptr)
+    return PosixRoot.root.fcntl(fd, cmd, ptr)
 }
 
 public func open(path: UnsafePointer<CChar>, oflag: CInt) -> CInt {
-    return Posix.sharedInstance.open(path, oflag: oflag)
+    return PosixRoot.root.open(path, oflag: oflag)
 }
 
 public func open(path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt {
-    return Posix.sharedInstance.open(path, oflag, mode)
+    return PosixRoot.root.open(path, oflag, mode)
 }
 
 public func openat(fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt) -> CInt {
-    return Posix.sharedInstance.openat(fd, path, oflag)
+    return PosixRoot.root.openat(fd, path, oflag)
 }
 
 public func openat(fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt {
-    return Posix.sharedInstance.openat(fd, path, oflag, mode)
+    return PosixRoot.root.openat(fd, path, oflag, mode)
 }
 
 #if os(Linux)

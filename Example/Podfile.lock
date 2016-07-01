@@ -1,5 +1,7 @@
 PODS:
-  - LTSwiftPosix (0.1.0)
+  - LTSwiftPosix (0.1.0):
+    - LTSwiftPosix/Mock (= 0.1.0)
+  - LTSwiftPosix/Mock (0.1.0)
   - Nimble (3.2.0)
   - Quick (0.9.2)
 
@@ -13,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LTSwiftPosix: cc0fb2803e5581e194ac3fc1987ebc1ca75fb184
+  LTSwiftPosix: 3a33a35c08ccdcca5dafb1777e78d2fa36b42cf8
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
