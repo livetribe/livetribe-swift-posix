@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LTSwiftPosix: 3a33a35c08ccdcca5dafb1777e78d2fa36b42cf8
+  LTSwiftPosix: d3dcffbc9a9388d4d1e95338161395f4c0c135b7
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
